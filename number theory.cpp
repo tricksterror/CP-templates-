@@ -50,3 +50,4 @@ int binexpitr(int a, int b) {//iterative binary exponentation
 		b >>= 1;
 	}
 	return ans;
+}
