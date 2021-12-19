@@ -114,3 +114,15 @@ void sieve(int n) {
 		}
 	}
 }
+//calculation of prime factors showing through vectors and map formats using sieve algorithm.
+
+vector<int> prime_f;
+unordered_map<int,int> prime_factors;
+sieve(x);
+while (n > 1) {
+	int prime = lp[n];
+	while (n % prime == 0) {
+		prime_f.push_back(prime);
+		prime_factors[prime]++;  n/= prime;
+	}
+}
