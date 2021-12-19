@@ -79,3 +79,18 @@ int binexpitr(long long int a, long long int b) {
 	}
 	return ans;
 }
+
+//evaluating all primes of a numbers in O(sqrt(N))
+
+int n;
+cin >> n;
+vector<int> prime_f;
+for (int i = 2; i*i <= n; i++) {
+	while (n % i == 0) {
+		prime_f.push_back(i); n /= i;
+	}
+}
+if (n > 1) prime_f.push_back(n);
+for (auto it : prime_f) {
+	cout<< it <<" ";
+}
