@@ -94,3 +94,23 @@ if (n > 1) prime_f.push_back(n);
 for (auto it : prime_f) {
 	cout<< it <<" ";
 }
+
+
+const int N = 1e7 + 10;
+vector<bool> is_prime(N, 1);
+vector<int> hp(N, 0), lp(N, 0);
+vector<int> divisors[N];
+
+//sieve algorithm
+void sieve(int n) {
+	is_prime[0] = is_prime[1] = false;
+	for (int i = 2; i <= n; ++i) {
+		if (is_prime[i] == true) {
+			lp[i] = hp[i] = i;
+			for (int j = 2*i; j <= n; j += i){
+				is_prime[j] = false; hp[j] = i;
+				if (lp[j] == 0) lp[j] = i;
+			}
+		}
+	}
+}
