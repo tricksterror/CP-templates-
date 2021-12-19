@@ -142,3 +142,12 @@ void find_dv(int n) {
 		}
 	}
 }
+
+//precomputation of all the factorials 
+
+const int M = 1e9 + 7;
+
+int fact[n];
+
+for (int i = 1; i <= N ; ++i)
+        fact[i] = (fact[i-1]*1ll*i) % M;
