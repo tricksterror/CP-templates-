@@ -126,3 +126,19 @@ while (n > 1) {
 		prime_factors[prime]++;  n/= prime;
 	}
 }
+
+const int N = 1e5+7;
+
+//precomputation of all the divisors and sum of divisors;
+
+vector<int> divisors[N];
+int sum[N];
+
+void find_dv(int n) {
+	for (int i = 2; i <= n; ++i) {
+		for (int j = i; j <= n; j += i) {
+			divisors[j].push_back(i); 
+			sum[j] += i;
+		}
+	}
+}
