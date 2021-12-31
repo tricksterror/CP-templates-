@@ -41,7 +41,7 @@ for (int i = 1; i <= n; ++i) {
 const int N = 1e3 + 10;
 
 vector<int> g[N];
-vector<int> vis(N);
+vector<bool> vis(N, false);
 
 
 void dfs(int vertex) {
